@@ -1,0 +1,800 @@
+/*Styles for display sizes 996px and over */
+
+/*General styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: serif;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Adjust colors for specific theme preferences */
+
+
+:root {
+    --main-bkcolor: rgb(10, 9, 14);
+    --main-textColor: #fff;
+    --sec-bkcolor: #888;
+    --sec-textColor: #999;
+    --main-underlineColor: rgb(238, 34, 68);
+    --main-border-color: #999;  
+    --color-white: #ffffff;
+  --color-blue-05: #deeafc;
+  --color-blue-30: #73a7f3;
+  --color-blue-50: #0060df;
+  --color-blue-60: #0250bb;
+  --color-blue-70: #054096;
+  --color-blue-80: #003070;
+  --color-cyan-20: #aaf2ff;
+  --color-cyan-30: #80ebff;
+  --color-cyan-50: #00ddff;
+  --color-gray-05: #fbfbfe;
+  --color-gray-50: #bfbfc9;
+  --color-gray-60: #8f8f9d;
+  --color-gray-70: #5b5b66;
+  --color-gray-90: #1c1b22;
+  --color-gray-100: #15141a;
+  --color-green-05: #d8eedc;
+  --color-green-30: #4dbc87;
+  --color-green-50: #017a40;
+  --color-green-80: #004725;
+  --color-red-05: #ffe8e8;
+  --color-red-30: #f37f98;
+  --color-red-50: #d7264c;
+  --color-red-80: #690f22;
+  --color-yellow-05: #ffebcd;
+  --color-yellow-30: #e49c49;
+  --color-yellow-50: #cd411e;
+  --color-yellow-80: #5a3100;
+}
+
+html {
+    background: var(--color-white);
+    color: var(--main-bkcolor);
+}
+
+body {
+    height: 60vh;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Start section styles */
+
+/* header styles */
+
+.navbar {
+    display: flex;
+    flex-flow: column;
+    color: var(--color-gray-100);
+}
+
+.head {
+    display: flex;
+    justify-content: flex-start;
+    padding: .5pc .5pc;
+
+}
+
+.x-logo {
+    padding: .1pc;
+}
+
+.x-logo img {
+    width: 5pc;
+    height: 5pc;
+}
+
+
+.sec-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 4pc;
+}
+
+.tab-panel {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+.tab-nav {
+    font-size: 2.5rem;
+    position: relative;
+    color: var(--main-bkcolor);
+}
+
+.tab-nav::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: .2pc;
+    bottom: 0;
+    left: 1pc;
+    margin: -1pc;
+    background-color: var(--main-bkcolor);
+    transform: scale(0);
+    transition: transform .3s ease;
+}
+
+.tab-nav:hover::before {
+    transform: scale(1);
+}
+
+.tab-nav:hover {
+    color: var(--main-bkcolor);
+}
+
+.tabLink:visited {
+    color: var(--main-bkcolor);
+
+}
+.tabLink:active {
+    color: var(--main-bkcolor);
+}
+.nav-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+}
+
+
+
+#searchcpsMarks {
+    height: 2.5pc;
+    padding: .2pc;
+    background-color: var(--color-gray-05);
+    border: .1pc solid var(--color-gray-50);
+    outline: none;
+    border-radius: 4px;
+}
+
+#submitcpsMarks {
+    padding: .5pc;
+    background-color: var(--color-blue-50);
+    color: var(--color-gray-05);
+    border: none;
+    border-radius: 4px;
+}
+
+#submitcpsMarks:hover {
+    background-color: var(--color-blue-80);
+}
+
+.na-nav {
+    color: var(--main-bkcolor);
+}
+
+.na-nav:hover {
+    color: var(--color-gray-100);
+}
+
+
+
+/* End Header styles */
+
+
+
+.grid-container {
+    margin-top: 1.5pc;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: minmax(85vh, auto);
+    height: 50vh;
+}
+
+.side-bar {
+    border: .1pc solid var(--main-border-color);
+    display: flex;
+    flex-flow: column;
+    padding: .5pc .5pc;
+
+    justify-content: space-between;
+    padding: .5pc .5pc;
+    color: var(--sec-textColor);
+}
+
+
+
+.sb-nav {
+    display: flex;
+    flex-flow: column;
+    gap: 1pc;
+    align-items: center;
+    background-color: var(--color-gray-05);
+    padding: .2pc;
+    transition: border-color .3s ease;
+    border-radius: 8px;
+}
+
+.sb-nav:hover {
+    color: var(--main-bkcolor);
+    background-color: #eee;
+}
+
+.bottom-sb-box {
+    display: flex;
+    flex-flow: column;
+    gap: 1pc;
+    text-align: center;
+    height: 15vh;
+}
+
+
+
+.bt-sb-link {
+    height: 2.5pc;
+    width: auto;
+    border: none;
+    padding: .5pc;
+    color: var(--color-gray-100);
+}
+
+
+
+.bt-sb-link:hover {
+    color: var(--main-bkcolor);
+}
+
+.bt-sb-terms:hover {
+    color: var(--color-blue-80);
+}
+
+.bt-sb-cpright:hover {
+    color: var(--color-blue-80);
+}
+
+.central{
+    height: auto;
+    font-size: 4rem;
+    background-color: var(--color-blue-05);
+
+
+}
+
+.central-contents {
+    display: flex;
+    flex-flow: column;
+    gap: 1pc;
+    height: 100%;
+    padding: 1pc;
+}
+
+.s-box {
+    height: 20%;
+}
+
+.s-title {
+    font-size: 2rem;
+}
+
+
+
+.s-text {
+    font-size: 1.1rem;
+}
+
+
+/* ADDED MARKUP FROM SCHOOL SYSTEM */
+#app {
+    margin: 5pc auto;
+    border-radius: .4pc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 20pc;
+    gap: 1pc;
+    width: 70%;
+    background-color: var(--color-gray-05);
+}
+
+.oraside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.or-tbox {
+    text-align: center;
+}
+
+
+.oractbox {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+}
+
+.ortitle {
+    font-size: 30px;
+}
+
+.orbtn {
+    height: 3pc;
+    width: 15pc;
+    border: none;
+    font-size: 1.2rem;
+}
+
+
+/* students registration box */
+
+.stdmainbx {
+    margin: 2pc auto;
+    width: 70%;
+    
+}
+
+.stdmaintitle {
+    padding: .5pc 0pc;
+    font-size: 2rem;
+}
+
+.stdmainin {
+    background-color: var(--color-gray-05);
+    border-radius: .4pc;
+}
+
+.stdmainintitle {
+    padding: .5pc;
+    font-size: 1.5rem;
+}
+
+.stdgdatabx {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 20pc;
+    padding: .5pc;
+}
+
+.stdaside {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5pc;
+}
+
+.sflex {
+    height: 3pc;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1pc;
+}
+
+.sflexinp {
+    height: 2.5pc;
+    outline: none;
+    width: 60%;
+}
+
+.studentProfile {
+    display: flex;
+    gap: 1pc;
+}
+
+#changeProfile {
+    height: 2.5pc;
+    width: 8pc;
+    border: none;
+}
+
+.stdImg {
+    height: 10pc;
+    width: 10pc;
+    border-radius: 100%;
+}
+
+
+.stdActbtns {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.stdActbtnsIn {
+    padding: .5pc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1pc;
+}
+
+.stdinfobtn {
+    height: 2.5pc;
+    width: 8pc;
+    border: none;
+}
+
+.notif {
+    padding: .5pc;
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+}
+
+
+/* grade box */
+.stdgradebx {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 15pc;
+    padding: .5pc;
+}
+
+
+/* Table*/
+
+#dataTable {
+    margin: 5pc auto;
+    width: 70%;
+    border-radius: .4pc;
+    background-color: #fff;
+}
+
+#stdData {
+    width: 100%;
+}
+
+table, thead, th, tr, td {
+    border: .1pc solid #333;
+}
+
+/* hide boxes and show them using js when needed 
+
+.hidebox {
+    display: none;
+}
+
+
+*/
+
+.hbox {
+    display: none;
+}
+
+/* additional style - for registry tab - shows when nothing has been selected */
+
+.rgshow {
+    margin: 5pc auto;
+    width: 50%;
+    font-size: 2rem;
+    color: #000;
+}
+
+
+
+/* confirm box */
+/*mobile first */
+/* 24 January 2023 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.confirmAppOuter {
+    width: 40%;
+    padding: 1.25pc 1pc;
+    border-radius: 1.25pc 1.25pc 0pc 0pc;
+    /* instead of a border - use box-shadow */
+    background-color: black;
+    color: var(--main-textColor);
+    box-shadow: 0 .6pc 1.2pc rgba(29, 30, 32, 0.753); 
+}
+
+/* class added by javascript for dialog confirm box */
+.dialogStyles {
+    position: absolute;
+    top: 30%;
+    left: 35%;  
+}
+
+.confirmApp {
+    display: flex;
+    flex-flow: column;
+    gap: .25pc;
+}
+
+.confirmAppInner {
+    border: .1pc solid #555;
+    padding: .5pc;
+    border-radius: .25pc;
+}
+
+.confirmHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .2pc;
+}
+
+.confirmTitle {
+    font-size: 1.1rem;
+}
+
+
+#closeConfirm {
+    font-size: 1.1rem;
+    color: #eee;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: .3pc .8pc; /* buttons have a preset top and bottom paddings - it should be smaller */ 
+}
+
+#closeConfirm:hover {
+    background-color: #f00;
+    color: white;
+}
+
+.confirmMain {
+    padding: .5pc;
+    height: 10vh;
+}
+
+.confirmButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: .2pc;
+}
+
+.confirmbtn {
+    height: 2.5pc;
+    background: transparent;
+    font-size: 1rem;
+    color: #fff;
+    border-color: #555;
+}
+
+.confirmbtn:hover {
+    border-color: goldenrod;
+}
+
+.confirmYes {
+    border-radius: .25pc 0pc 0pc .25pc;
+}
+
+.confirmNo {
+    border-radius: 0pc .25pc .25pc 0pc;
+}
+
+
+
+
+
+/* START ENTRY MARKS BOX */
+
+#bodyRoot {
+    margin: 5pc auto;
+    width: 70%;
+    border-radius: .4pc;
+    box-shadow: 0 0.66pc .666pc #eee;
+    background-color: #fff;
+    padding: .5pc;
+
+}
+.main_root {
+    margin-top: 1pc;
+    background-color: var(--color-gray-05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-between;
+    gap: 1pc;
+    padding: 1pc;
+
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1pc;
+
+}
+
+.subject_box {
+      display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15pc;
+}
+
+.subject_input {
+    padding: .5pc;
+    width: 7pc;
+    height: 2.5pc;
+}
+
+.subject_total_btn {
+    height: 2pc;
+    width: 7pc;
+    padding: .5pc;
+}
+
+
+@media only screen and (max-width:960px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        gap: 1pc;
+        align-items: center;
+    }
+}
+
+
+
+/* media query for school system */
+@media only screen and (min-width: 1180px) {
+    #bodyRoot {
+        width: 60%;
+    }
+}
+@media only screen and (max-width:1160px) {
+    .tab-nav {
+        font-size: 1.8rem;
+    }
+
+    .nav-actions {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width:900px) {
+    .tab-nav {
+        font-size: 1.6rem;
+    }
+
+    #app {
+        width: 90%;   
+    }
+
+    .stdmainbx {
+        margin: 2pc auto;
+        width: 90%;
+        
+    }
+}
+@media only screen and (max-width: 700px) {
+   
+    .sec-nav {
+        display: flex;
+        flex-flow: column;
+        gap: 2pc;
+    }
+
+    .nav-actions {
+    display: flex;
+    flex-flow: column;
+    gap: 1pc;
+    width: 100%;
+}
+
+.tab-panel {
+    width: 100%;
+}
+
+.tab-nav {
+    font-size: 1.5rem;
+}
+
+.grid-container {
+    margin-top: 1.5pc;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+}
+
+.side-bar {
+    display: flex;
+    flex-flow: unset;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5pc .5pc;
+}
+
+.top-sb-box {
+    visibility: hidden;
+}
+
+.bottom-sb-box {
+    display: unset;
+    flex-flow: unset;
+    gap: unset;
+    text-align: center;
+}
+
+.bottom-sb-box >  a,  p{
+    display: none;
+}
+
+.central{
+    font-size: 4rem;
+    width: 100%;
+    padding: .5pc;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;   
+    padding: .5pc;
+}
+
+/* student reg box */
+.stdmainbx {
+    margin: 2pc auto;
+    width: 100%;
+    
+}
+
+.stdgdatabx {
+    display: flex;
+    flex-direction: column;
+    padding: .5pc;
+}
+
+.studentProfile {
+    display: unset;
+}
+
+.stdActbtnsIn {
+    padding: .5pc;
+    display: unset;
+}
+
+.stdinfobtn {
+    margin: .5pc;
+}
+
+.confirmAppOuter {
+    width: 80%;
+}
+
+/* --------------*/
+.rgshow {
+    width: 100%;
+    text-align: center;
+    padding: .5pc;
+}
+
+
+/* ------------------*/
+
+#dataTable {
+    width: 100%;
+    padding: .5pc;
+}
+
+
+/* -------------------*/
+#bodyRoot {
+    width: 100%;
+    padding: .5pc;
+}
+
+
+/* --------------------------*/
+.confirmAppOuter {
+    width: 100%;
+}
+
+.dialogStyles {
+    position: absolute;
+    top: 30%;
+    left: 0;  
+}
+
+}

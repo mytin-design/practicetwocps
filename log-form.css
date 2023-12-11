@@ -1,0 +1,108 @@
+/* Optimized version - 1.1
+
+/*theme 1 uses a picture as background;
+theme 2 uses colors */
+/* Use relative measurement values*/
+
+/*
+html {
+    margin: 0;
+    padding: 0;
+    background: repeating-linear-gradient(23deg, #877887, #fddffd, #411441);
+    background-image: url('hostel4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+*/
+
+html {
+    background-image: radial-gradient(circle, rgba(216, 215, 215, 0.144), #fff);
+
+}
+
+
+
+.sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 8% auto;
+    height: 40pc;
+    width: 95%;
+    padding: 1pc;
+    border-radius: .5pc;
+    box-shadow: 0 0 .6pc .006pc #cdcbcbcf;
+    /*background-image: repeating-linear-gradient(32deg, #eddedd, #433443, #addaad);
+    background-image: linear-gradient(32deg, teal, navy);
+    background-image: linear-gradient(23deg, navy, teal);*/
+
+    /* theme 1 background 
+    background-image: radial-gradient(circle, gray, #fff);
+    */
+
+    /* theme 2 */
+
+    color: #000;
+}
+
+.input {
+    background-color: transparent;
+    color: navy;
+    font-weight: bolder;
+    border: none;
+    height: 3pc;
+    width: 70%;
+    border-bottom-width: .101pc;
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+#u-data {
+    border-radius: 3pc;
+    color: white;
+    height: 2.9pc;
+    width: 13pc;
+    text-align: center;
+    background-color: black;
+}
+#u-data:hover {
+    background-image: repeating-linear-gradient(23deg, navy, teal);
+    cursor: pointer;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    height: 2.5pc;
+}
+
+/* styles for displays 1080, 996 and below : tablets */
+
+@media only screen and (max-width: 996px) {
+    .sign-up {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .sign-up {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .sign-up {
+        font-size: .8rem;
+        width: 90%;
+    }
+}
+
+
+
+

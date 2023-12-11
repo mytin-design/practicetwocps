@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500&display=swap');
+#joinerHolder {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+background-image:linear-gradient(135deg, rgba(81, 88, 148, 0.8), rgba(25, 33, 109, 0.8)), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+background-position: center;
+width: 50%;
+height: 100% !important;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+color: var(--text);
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+font-size: 16px;
+line-height: 2rem;
+overflow: scroll;
+border-radius: 8px;
+
+}
+
+
+.closureForm {
+    text-align: right;
+    padding: .5pc;
+}
+
+
+#closeJoinForm {
+    border: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5pc;
+    padding: 4px;
+}
+
+#closeJoinForm:hover {
+    color: red;
+}
+#description {
+font-style: italic;
+font-weight: lighter;
+font-size: 20px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#title, #description {
+text-align: center;
+
+}
+
+::placeholder, #drop-down {
+font-size: 19px;
+}
+
+#dropdown {
+padding-left: .5pc;
+
+}
+
+.valpadding {
+    padding: .25pc;
+}
+
+
+:root {
+--text: hsl(255, 100%, 98%);
+--form: rgba(19, 24, 44, 0.7);
+--button: hsl(125, 49%, 42%);
+}
+#survey-form {
+margin: 0 auto;
+width: 70%;
+background: var(--form);
+padding: 28px;
+border-radius: 5px;
+
+}
+#name, #email, #number {
+width: 95%;
+height: 35px;
+border-radius: 6px;
+color: #222;
+
+}
+
+#submit {
+width: 95%;
+height: 45px;
+border-radius: 6px;
+background: var(--button);
+color: var(--text);
+font-size: 19px;
+
+}
+
+input[placeholder] {
+font-size: 19px;
+padding-left: .5pc;
+}
+
+/*input[type="radio"], input[type="radio"]  {
+
+}*/
+
+#dropdown {
+width: 96%;
+height: 35px;
+border-radius: 6px;
+background-color: navy;
+}
+
+textarea {
+width: 94%;
+}
+
+
+/*mobile design */
+
+@media screen and (max-width: 900px) {
+    
+    *  {
+        font-size: small;
+    }
+
+    #drop-down, #name::placeholder, #email::placeholder, #number::placeholder {
+        font-size: small;
+        }
+
+    #title {
+        font-size: 20px;
+    }
+
+    #joinerHolder {
+        width: 70%;
+        left: 12%;
+    }
+#survey-form {
+    width: 80%
+}
+}
+
+@media screen and (max-width: 500px) {
+    
+    #drop-down, #name::placeholder, #email::placeholder, #number::placeholder {
+        font-size: small;
+        }
+
+}
+
+
+
+@media screen and (max-width: 400px) {
+    #title, #description {
+        font-size: smaller;
+
+    }
+
+    #drop-down, #name::placeholder, #email::placeholder, #number::placeholder {
+        font-size: small;
+        }
+
+}

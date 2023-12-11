@@ -1,0 +1,2780 @@
+/* optimization date 10/July/2023- 20
+
+
+ :02 P.M */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    transition: .5s ease;
+}
+
+html {
+    scrollbar-width: thin;
+}
+
+:root {
+    --cps-main: rgb(39, 184, 241);
+    --cps-sec: skyblue;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+img {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    pointer-events:none;
+-webkit-tap-highlight-color:rgba(255, 255, 255, 0);
+}
+
+
+/*header styles*/
+
+.description {
+    background: #fff;
+    position: fixed;
+    top: -70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 10px;
+    padding: 5px;
+    margin-bottom: 1rem;
+    color: #000;
+    transition: top .3s;
+    box-shadow: 0 .6pc .6pc #eee;
+    text-align: center;
+    z-index: 30;
+    left: 0px;
+}
+
+.school-name, .motto {
+    font-size: 1.5rem;
+}
+
+.cpslogo {
+    border-radius: 100%;
+    height:2.5pc;
+    width: 2.5pc;
+}
+
+
+
+.hd {
+    padding: 1pc;
+    color: #000;
+    height: fit-content;
+    
+}
+
+.hide-big {
+    display: none;
+}
+.nav-bn {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0pc 2pc 0pc 2pc;
+}
+
+.tx-bx {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1pc;
+}
+
+
+
+.vn-main-title {
+    color: white;
+    padding: .5pc;
+    background-color: skyblue;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+.vn-main-title:hover {
+    background-color: rgb(39, 184, 241);
+}
+
+.vn-main-title:hover {
+    color: #eee !important;
+}
+
+#vn_src {
+    color: #000;
+    background-color: transparent;
+    border-color: #555;
+    padding: .5pc;
+    border-radius: 8px;
+}
+
+.nv-bn-lns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.nv-bn-ln {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5pc;
+    cursor: pointer;
+}
+
+
+.rg-ln {
+    color: rgb(39, 184, 241);
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    color: #000;
+}
+
+.drop-ln {
+    color: #111;
+    text-transform: none;
+}
+
+.mn-nv {
+    margin: 1pc auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mn-nv-ln {
+    color: #000;
+}
+
+.mn-nv-ln:hover{
+    color: #000;
+
+}
+
+.mn-nv-ln:visited {
+    color: #000;
+}
+
+.in-sec {
+    margin-top: 6pc;
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+    gap: 1pc;
+    padding: 1pc;
+}
+
+.hero-titlex {
+    font-size: 2rem;
+    color: #222;
+
+}
+
+.hero-title {
+    font-size: 4rem;
+}
+
+.in-sec-p {
+    color: #222;
+}
+
+
+a.in-sec-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5pc;
+    width: 10pc;
+    border: none;
+    background-color: skyblue;
+    color: #000;
+    border-radius: 8pc;
+}
+
+.in-sec-btn:hover {
+    background-color: rgb(39, 184, 241);
+}
+
+/* carousel styles - inherited from - presence */
+/*Projects / Image carousel section styles */
+.project-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.pro-title {
+    color: #555;
+}
+
+.slider {
+    max-width: 1000px;
+    position: relative;
+    margin: 2pc auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hide the images by default */
+
+.pcard {
+    width: 100%;
+    display: none;
+}
+
+/* flexpcard */
+
+.flexpcard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1pc;
+}
+
+.fpcardbox {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1pc;
+    padding: 1pc;
+}
+
+.ftitle {
+    color: rgb(3, 51, 70);
+
+}
+
+.fptext {
+    color: #333;
+}
+
+.fpbtn {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5pc;
+    width: 8pc;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 8pc;
+}
+
+.fpbtn:hover {
+    background-color: rgb(39, 184, 241);
+  
+}
+/* Next and prev btns */
+
+.prevh, .nexth {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--akadianStrong); /* change in second theme */
+    font-weight: bold;
+    font-size: 38px;
+    transition: .6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    display: none;
+
+}
+
+
+
+
+.prevh {
+    left: -5pc;
+}
+/* Position the "next" button to the right*/
+.nexth {
+    right: -4pc;
+    border-radius: 3px 0 0 3px;
+}
+
+.prevh:hover, .nexth:hover {
+    background-color: var(--tsmedium-gray); /* change in second theme */
+}
+
+/* caption text 
+.caption {
+    color: rgb(29, 5, 29);
+    font-size: 2pc;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 9px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(173, 169, 169, 0.445);
+}
+*/
+
+/* Number text (1/3) */
+
+.img-num {
+    color: #eee;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.pimg {
+    width: 100%;
+    height: 500px;
+    border-radius: .8pc;
+
+}
+/* dots/bullets/ indicators */
+
+.ind {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #eee; /* change in second theme */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease;
+}
+
+.active, .ind:hover {
+    background-color: rgb(39, 184, 241);
+}
+
+/*fading animation - optional */
+
+.pcard {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* End carousel styles */
+
+/* main */
+
+.ft-prd {
+    text-align: center;
+}
+
+.ft-prd-title {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.tb-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1pc;
+}
+
+.tb-btn {
+    font-weight: 800;
+    cursor: default;
+}
+
+.tcontent {
+    margin: 1pc auto;
+    width: 95%;
+}
+.cpsgriditem {
+    margin: 1pc auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 25pc;
+    grid-auto-flow: row;
+    gap: .5pc;
+}
+
+.cpsgriditem > * {
+    border: .1pc solid #eee;
+}
+
+/* theme breaker for about us */
+
+.cpsdividethick {
+    border: 2.5px solid #000;
+}
+
+.cpsdividethin {
+    border: 1.25px solid #000;
+}
+
+.cpsdivitextbox {
+
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 0 0 0 3.5rem;
+    width: 100%
+}
+
+.cpsdividetext {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.cpsdividetexta {
+    color: rgb(39, 184, 241);
+}
+
+#abdividerColor > * {
+    color: rgb(39, 184, 241);
+    border-color: rgb(39, 184, 241);
+}
+
+/* theme breaker for events */
+.cpsdividetextb {
+    color: red;
+}
+
+#evdividerColor > * {
+    color: red;
+    border-color: red;
+}
+
+/* theme breaker for events */
+.cpsdividetextc {
+    color: rgb(3, 107, 3);
+}
+
+#infodividerColor > * {
+    color: rgb(3, 107, 3);
+    border-color: rgb(3, 107, 3);
+}
+
+.sh-bx {
+    display: flex;
+    flex-flow: column;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    transition: box-shadow 1s ease;
+    padding: 1pc;
+}
+
+.sh-onhover {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1pc;
+    justify-content: flex-end;
+}
+
+.sh-bx:hover .sh-onhover {
+    visibility: visible;
+}
+
+.sh-bx:hover {
+    box-shadow: 0pc 0pc 0.666pc 0.666pc #eee;
+}
+
+.sh-bx:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.sh-bx-item-wrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1pc;
+}
+
+.sh-bx-img{
+    height: 10pc;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.sh-name {
+    font-weight: bold;
+}
+
+.sh-ds {
+    color: #333;
+}
+
+.h-line {
+    width: 50%;
+}
+
+.sh-price {
+    color: skyblue;
+}
+
+.sh-price:hover {
+    color: rgb(39, 184, 241);
+}
+
+.sh-bx-3 {
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1pc;
+    padding: 1pc;
+    border-radius: 8px;
+}
+
+.sh-bx-3:hover {
+    box-shadow: 0pc 0pc 0.666pc 0.666pc #eee;
+}
+
+.sh-bx-3-info {
+    display: flex;
+    flex-flow: column;
+    text-align: start;
+    padding: 1pc;
+    width: 15pc;
+}
+
+.sh-bx-3-title {
+    font-size: 2rem;
+}
+
+
+.sh-bx-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5pc;
+    width: 8pc;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.sh-bx-btn:hover {
+    background-color: rgb(39, 184, 241);
+}
+
+
+/* carousel for container spanning 3 columns */
+
+
+.crsl-wrap {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100pc;
+}
+
+
+.crsl-bx {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1pc;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    display: none;
+}
+
+.scrsl-bx {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1pc;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    display: none;
+}
+
+.rcrsl-bx {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1pc;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    display: none;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+.crsl-img {
+    height: 8pc;
+    width: 12pc;
+    border-radius: .2pc;
+
+}
+
+.crsl-item-name {
+    font-weight: 800;
+}
+
+.crsl-item-price {
+    color: skyblue;
+}
+
+.crsl-item-price:hover {
+    color: rgb(39, 184, 241);
+    cursor: default;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 1pc;
+    color: black;
+    background: #eee;
+    cursor: pointer;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 1.3pc;
+    transition: .6s ease;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.next{
+    right: -3pc;
+    background-color: skyblue;
+}
+
+.next:hover {
+    background-color: rgb(39, 184, 241);
+}
+
+.prev {
+    left: -3pc;
+}
+
+
+
+.sh-bx-2 {
+grid-column: span 2;
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 1pc;
+border-radius: 8px;
+}
+
+
+.sh-2-img {
+        height: 13pc;
+        width: 15pc;
+        border-radius: 6px;
+
+}
+
+.sh-bx-2:hover {
+    box-shadow: 0pc 0pc 0.666pc 0.666pc #eee;
+}
+
+.vn-foo {
+    background-color: #eee;
+    color: #000;
+}
+.vn-foo-in {
+    padding: 4pc 4pc 2pc 4pc;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+.foo-lnks {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.foo-title {
+    text-align: center;
+}
+
+.foo-ln {
+    color: #777;
+}
+
+.foo-ln:hover {
+    color: #fff;
+}
+
+.fol-lnks {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.foo-msg-form {
+    background-color: transparent;
+}
+
+#msgBx {
+    background-color: transparent;
+    color: #777;
+    border:.1px solid #888;
+    padding: .5pc;
+    outline: none;
+    border-radius: 8px;
+}
+
+
+
+#sendMsgBx {
+    color: #000;
+    font-size: 1.5rem;
+    background-color: skyblue;
+    padding: .5pc;
+    border: none;
+    border-radius: 2px;
+
+}
+
+#sendMsgBx:hover {
+    background-color: rgb(39, 184, 241);
+}
+.cp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1pc;
+    text-align: center;
+}
+
+
+
+/*styles for devices less than 996px */
+
+@media only screen  and (max-width: 996px) {
+    .hd {
+     
+        height: fit-content;
+    }
+
+    .hide-big {
+        display: none;
+    }
+    .nav-bn {
+        margin: 0 auto;
+        width:95%;
+        padding: 0pc 2pc 0pc 2pc;
+    }
+
+    .in-sec {
+        margin-top: 6pc;
+        margin-left: 8pc;
+        width: 50%;
+        
+    }
+    /* is there  way to push grid containers over to the next line - like flex wrap?*/
+    .cpsgriditem {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+
+@media only screen and (max-width: 935px) {
+    .foo-title {
+        font-size: small;
+    }
+
+    .foo-ln {
+        font-size: small;
+    }
+
+    .f-msg-title {
+        font-size: small;
+    }
+    .foo-lnks {
+        font-size: small;
+    } 
+}
+@media only screen and (max-width: 920px) {
+    .cpsgriditem {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .hd {
+        height: fit-content;
+    }
+    
+    
+    .nav-bn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .vn-main-title {
+        padding: .5pc;
+    }
+
+    #vn_src {
+        padding-left: 1pc;
+        font-size: .8rem;
+    }
+
+
+    .hide-small {
+        display: none;
+    }
+
+    .hide-big {
+        display: block;
+    }
+
+    /* sidepanel */
+
+    .show-small {
+        display: block;
+    }
+    #sidePanel {
+        display: flex;
+        flex-flow: column;
+        gap: 1pc;
+        align-items: start;
+        position: fixed;
+        width: 0; /* the width is 0 when panel is closed */
+        height: 100vh;
+        z-index: 80;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.925);
+        overflow: scroll;
+        padding-top: 3pc;
+        transition: .5s;
+    }
+
+    .sidepanel > .nv-bn-ln, .mn-nv-ln {
+        padding-left: 3pc;
+        width: 100%;
+        font-size: 1pc;
+        text-decoration: none;
+        display: block;
+        transition: .5s;
+    }
+
+
+    
+
+    
+#sidePanel .txt-low {
+    color: #999;
+}
+
+#sidePanel .txt-low:hover {
+    color: #fff;
+}
+
+
+    /*position and style the close button*/
+
+    .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 1pc;
+        font-size: 3pc;
+        color: white;
+        cursor: pointer;
+
+    }
+
+
+    /* style the btn that opens the side panel */
+
+    .openNav {
+        font-size: 1.5pc;
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        padding: 6px 10px;
+        border: none;
+    }
+
+    .openNav:hover {
+        color: #888;
+    }
+
+    .in-sec {
+        margin-left: 1pc;
+        width: 100%;
+    }
+
+    
+}
+
+@media only screen and (max-width: 730px) {
+
+    .pimg {
+    width: 100%;
+    height: 400px;
+    border-radius: .8pc;
+
+}
+    .foo-title {
+        font-size: smaller;
+    }
+
+    .foo-ln {
+        font-size: smaller;
+    }
+
+    .f-msg-title {
+        font-size: smaller;
+    }
+    .foo-lnks {
+        font-size: smaller;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    /* flexpcard */
+
+.flexpcard {
+    display: flex;
+    flex-flow: column;
+
+    gap: 1pc;
+}
+    .cpsgriditem {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sh-bx-3 {
+        grid-column: span 2;
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        font-size: xx-small;
+    }
+
+    .sh-bx-3-title {
+        font-size: xx-small;
+    }
+
+    .sh-bx-2 {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        font-size: xx-small;
+        
+    }
+
+    .sh-2-img {
+        height: 10pc;
+    }
+
+    .vn-foo-in {
+        width: 100%;
+        padding: .5pc;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .vn-foo-in {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1pc;
+    }
+
+    .foo-title {
+        font-size: small;
+    }
+
+    .foo-ln {
+        font-size: small;
+    }
+
+    .f-msg-title {
+        font-size: small;
+    }
+    .foo-lnks {
+        font-size: small;
+    }
+}
+
+/* for devices less than 500px */
+@media only screen and (max-width: 500px) {
+
+    
+    .vn-main-title {
+        display: none;
+    }
+    
+    .hero-titlex {
+        font-size: 1.5rem;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+
+            .pimg {
+    width: 100%;
+    height: 300px;
+    border-radius: .8pc;
+
+}
+
+
+
+    .school-name, .motto {
+        font-size: 1rem;
+    }
+    
+    .vn-foo-in {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1pc;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 375px) {
+
+        .pimg {
+    width: 100%;
+    height: 250px;
+    border-radius: .8pc;
+
+}
+
+    .school-name, .motto {
+        font-size: .95rem;
+    }
+    .cpsgriditem {
+        grid-template-columns: 1fr;
+    }
+
+    .sh-bx-3 {
+        grid-column: span 1;
+    }
+
+    .sh-bx-2 {
+        grid-column: span 1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --main-back: #eee;
+}
+
+
+
+
+
+
+
+
+/* directories nav */
+.navWrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .25pc;
+}
+
+.title {
+    text-decoration: none;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #000;
+    padding: .5pc;
+}
+.extraNav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+}
+.help-btn {
+    height: 35px;
+    width: 70px;
+    background-color: rgb(55, 55, 246) !important;
+    color: #fff !important;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.help-btn:hover {
+    color: aliceblue !important;
+}
+
+select {
+    background-color: var(--main-back);
+}
+
+#searchPc {
+    width: 50%;
+    height: 35px;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    background-color: var(--main-back);
+    padding-left: 2pc;
+}
+
+/* Account creation */
+ 
+
+.hoverbox {
+    position: relative;
+    z-index: 20;
+}
+
+.hovermbox {
+    position: relative;
+    z-index: 20;
+}
+
+.hovmbox {
+    position: absolute;
+    left: -130%;
+    padding: 1pc;
+    border: .1pc solid #eee;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0  .6pc .6pc #eee;
+
+}
+
+.hovbox {
+    position: absolute;
+    left: -130%;
+    padding: 1pc;
+    border: .1pc solid #eee;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0  .6pc .6pc #eee;
+    border-radius: 8px;
+
+}
+
+
+.accbxs {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 2.5pc;
+    width: 10pc;
+    padding: 1pc;
+    border-radius: 8px;
+}
+
+.accmbxs {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 2.5pc;
+    width: 10pc;
+    padding: 1pc;
+}
+
+.accbxs > a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.accmbxs > a {
+    text-decoration: none;
+    color: #000;
+}
+.accbxs:hover {
+    border: .1pc solid #eee;
+}
+
+.accmbxs:hover {
+    border: .1pc solid #eee;
+}
+.hoverbox:hover .hovbox {
+    display: block;
+    transition: .3s ease-in-out;
+}
+
+
+
+/* main styles */
+
+/* dialog box */
+
+/* check usage of backdrop filter */
+.addopacity {
+    color: #eee;
+
+}
+
+.removeopacity {
+    background: #fff;
+    color: #000;
+
+}
+
+.dialogmain {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    margin: 1pc auto;
+    width: 20pc;
+    border-radius: .4pc;
+    padding: .5pc;
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 0  .6pc .6pc #eee;
+    z-index: 30;
+    display: none;
+}
+
+.dialoghead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5pc 0 .5pc;
+    font-weight: bold;
+}
+
+.closed {
+    padding: 0 .5pc;
+    color: #eee;
+    font-size: 2rem;
+    cursor: default;
+}
+
+.closed:hover {
+    color: red;
+}
+
+.dialogbody {
+    padding: .5pc;
+}
+
+
+.dfoo {
+    padding: 0 .5pc 0 .5pc;
+}
+
+#b2  {
+    background-color: skyblue;
+    color: #000;
+}
+
+
+/* End of dialog */
+
+
+.main {
+    margin-top: 50px;
+}
+
+.voter-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1pc;
+} 
+
+.ps-center-name {
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+.ps  {
+    text-align: center;
+
+}
+
+.vote-logo {
+    margin-top: 20px;
+    font-size: 1.8em;
+}
+
+.avatar-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+}
+
+
+.secmain {
+    padding: .5pc;
+}
+
+.secint {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1pc;
+    padding-left: 1pc;
+}
+
+
+.cpsbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1pc;
+    height: 2.5pc;
+    width: 8pc;
+    color: #000;
+    border: none;
+    border-radius: 10pc;
+    background-color: #eee;
+    padding: .5pc 2pc;
+    font-size: 1.2rem;
+}
+
+.cpsbtn:hover {
+    background-color: #b1b1b1d8;
+}
+
+
+/*foo links */
+
+.foo {
+    color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    height: 20vh;
+}
+
+.foo-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.3em;
+}
+
+
+/* media query for displays over 996px */
+
+@media only screen and (min-width: 996px) {
+    #searchPc {
+        width: 30%;
+        height: 35px;
+        border-radius: 40px;
+        outline: none;
+        border-color: rgb(223, 222, 222);
+        background-color: var(--main-back);
+    }   
+
+    .main {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    #searchPc::placeholder {
+        padding-left: 30px;}
+}
+
+
+/* Grade 1 assignment styles */
+
+.grd1main {
+    margin-top: 2pc;
+    border: .1pc solid #eee;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: auto;
+}
+
+.secintitle {
+    margin: 1pc 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1pc;
+}
+
+.contbox {
+    border: .1pc solid #eee;
+    padding: .5pc;
+    font-size: 1.25rem;
+}
+
+.clogo {
+    padding-left: 1pc;
+
+}
+
+.secdata {
+    margin-top: .5pc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5pc;
+}
+
+@media only screen and (max-width: 996px) {
+    
+    .hovbox {
+    position: absolute;
+    left: -400% ;
+
+}
+}
+
+
+@media only screen and (max-width: 900px) {
+    .grd1main {
+        margin-top: 2pc;
+        border: .1pc solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnholder {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-gap: 1pc;
+    }
+
+    .extraNav {
+        
+        padding: 0 .5pc;
+    }
+
+    * {
+        font-size: small;
+    }
+
+    .dialogmain {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+    }
+}
+
+
+/* Grade 1 Exams */
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.examsheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+}
+
+.exfilter {
+    padding: .1rem;
+}
+
+.exgradetitle {
+    font-weight: bold;
+    font-size: large;
+}
+
+
+/* team styles */
+
+/* CAREERS - TEACHERS */
+.tchcareers {
+    margin: .5rem;
+}
+
+.bthemebtn {
+    margin: .8pc .8pc .8pc 3.2pc;
+}
+
+.cbox {
+    margin-top: 5pc;
+    margin-left: 5pc;
+    padding: 1pc;
+    width: 60%;
+}
+
+
+
+.cintro-sec {
+    width: 70%;
+}
+
+.main-tle {
+    padding: .5pc;
+    font-size: 1.7rem;
+}
+
+.cm-cm {
+    padding: .5pc;
+}
+
+.tintro-btns {
+    padding: .5pc;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.rdm-btn, .contact-btn {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .2pc;
+        height: 2.5pc;
+    height: 2.5pc;
+    width: 6.5pc;
+    border: .1rem solid #eee;
+    border-radius: .4rem;
+}
+
+.rdm-btn:hover , .contact-btn:hover {
+    background-color: #eee;
+}
+
+.rdm-btn {
+    background-color: rgb(233, 246, 252);
+}
+
+.career-wrap {
+    margin: 3pc auto;
+    width: 70%;
+    height: 10pc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ctitle {
+    font-size: 1.7rem;
+}
+
+.no-jobs {
+    padding: 1pc;
+}
+
+.back-ltr {
+    font-size: 1.3rem;
+}
+
+
+
+@media only screen and (max-width:996px) {
+
+.cbox {
+    width: 70%;
+}
+.cintro-sec {
+    width: 100%;
+}
+
+
+
+
+}
+
+@media only screen and (max-width:750px) {
+
+.cbox {
+    margin-left: 0;
+    width: 90%;
+}
+
+.cintro-sec {
+    width: 100%;
+}
+
+}
+
+@media only screen and (max-width:620px) {
+    .cintro-sec {
+        width: 100%;
+    }
+    
+}
+
+
+
+
+@media only screen and (max-width:500px) {
+    
+
+.cintro-sec {
+    width: 100%;
+}
+
+.rdm-btn, .contact-btn {
+    width: 6.5pc;
+}
+
+
+}
+
+@media only screen and (max-width:375px) {
+
+.cbox {
+    width: 100%;
+}
+.cintro-sec {
+    width: 100%;
+}
+
+.cintro-btns {
+    display: flex;
+    gap: 1pc;
+}
+
+.rdm-btn, .contact-btn {
+    width: 6.5pc;
+}
+
+.no-jobs {
+    width: 100%;
+}
+
+
+}
+
+
+/* start team container styles */
+.team-wrapper {
+    height: auto;
+}
+
+.team-wrap-title, .tm-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.tm-wrap {
+    margin: 2pc auto;
+    width: 90%;
+}
+
+.tm-title {
+    font-size: 1.3rem;margin-bottom: 2pc;
+}
+
+.tm-inner {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    align-content: center;
+    justify-items: center;
+    gap: .5pc;
+    padding: 1pc;
+}
+
+/* grid for other employees may be more than three, so specify separately */
+
+.sn-inner {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: .9rem;
+}
+.tm-bg {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1pc;
+    padding: 1pc;
+    border: .1pc solid #eee;
+}
+
+.tm-img {
+    width: 10pc;
+    height: 10pc;
+    border-radius: 100%;
+}
+
+.tm-bx-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    width: 70%;
+    text-align: center;
+}
+
+.tm-mb-name {
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.tm-small {
+    color: #777;
+}
+
+.tm-des {
+    width: 95%;
+    color: #555;
+    text-align: center;
+}
+
+.tm-snet {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.sn-inner > .tm-bg > .tm-snet {
+    font-size: .7rem;
+    display: flex;
+    gap: 1pc;
+}
+
+.sn-inner > .tm-bg > .tm-snet > .sm {
+    font-size: .7rem;
+    display: flex;
+    gap: 1pc;
+}
+
+@media only screen and (max-width:996px) {
+    .bh-team {
+    
+    width: 90%;
+    
+}
+
+.tintro-sec {
+    width: 70%;
+}
+
+.tm-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 18pc);
+    justify-items: center;
+    align-content: center;
+}
+
+
+}
+
+@media only screen and (max-width:750px) {
+    .bh-team {
+    
+    width: 100%;
+    
+}
+
+.tintro-sec {
+    width: 70%;
+}
+.tm-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 18pc);
+    justify-items: center;
+    align-content: center;
+}
+
+
+}
+
+@media only screen and (max-width:620px) {
+    .bh-team {
+    
+    width: 100%;
+    
+}
+
+.tintro-sec {
+    width: 80%;
+}
+
+
+
+.tm-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 15pc);
+    justify-items: center;
+    align-content: center;
+}
+}
+
+@media only screen and (max-width:500px) {
+    .bh-team {
+        margin-left: 0;
+    width: 100%;
+}
+
+
+
+.tm-inner {
+    display: flex;
+    flex-flow: column;
+}
+}
+
+@media only screen and (max-width:375px) {
+    .bh-team {
+    
+    width: 100%;
+    
+}
+
+
+.tm-inner {
+    display: flex;
+    flex-flow: column;
+}
+}
+
+
+
+/* start about us - from presence - stannes */
+
+.cpsabout {
+    margin: 0 auto;
+    width: 90%;
+    padding: 1pc;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.ab-main{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: minmax(200px, auto);
+    color: inherit;
+}
+
+
+.ab-c {
+    height: 30pc;
+    width: 100%;
+}
+
+.ab-host {
+    margin-left: 2pc;
+    width: 70%;
+    color: inherit; /* All text will have this color */
+}
+
+.about-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: inherit;
+    margin-top: 1pc;
+
+}
+
+.about-text {
+    margin-top: 1pc;
+    
+}
+
+.f-bg-img {
+    height: 10pc;
+    width: 10pc;
+    border-radius:10px;
+}
+
+
+
+
+.off-box {
+    color: #333;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: .6pc;
+}
+
+
+.f-bg-info {
+    text-align: center;
+}
+
+
+@media only screen and (max-width:996px) {
+    .ab-main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .ab-info {
+        height: fit-content;
+    }
+
+    .ab-p {
+        height: fit-content;
+        
+    }
+
+    
+
+    .ab-p-box {
+        display: flex;
+        width: 90%;
+
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .ab-p-box {
+        overflow-x: scroll;
+        display: flex;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .ab-p-box {
+        overflow-x: scroll;
+        display: flex;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .ab-p-box {
+        overflow-x: scroll;
+        display: flex;
+        width: 90%;
+    }
+}
+
+/* End about styles */
+
+/* start upcoming events */
+
+.bn {
+    height: 2.5pc;
+width: 8pc;
+border: none;
+background-color: #eea60a;
+color: white;
+font-weight: bold;
+}
+
+.upevents {
+    background-color: #e7e1ca;
+    text-align: center;
+    padding: 1pc .5pc 1pc .5pc;
+    
+    }
+    
+    .somefont {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+    }
+    
+    .up-evs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2pc;
+    align-items: center;
+    padding: 1pc;
+    }
+    
+    .upevmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1pc;
+    text-align: center;
+    }
+    
+    .up-ev-1 {
+    border: .5pc solid #fff;
+    height: 10pc;
+    width: 15pc;
+    }
+    
+    .up-ev-img {
+    height: 100%;
+    width: 100%;
+    }
+    
+    /* general style for all events label absolutes*/
+    
+    /* Position relative maybe better suited than position absolute - 
+    Because absolutely positioned elements differ in specified positions in different viewports*/
+    .up-ev-abs {
+    position: relative;
+    width: fit-content;
+    left: -1pc;
+    background-color: #f8c822;
+    color: white;
+    display: flex;
+    padding: .1pc .5pc .1pc 1pc;
+    gap: .5pc;
+    }
+    
+    .ev1-abs, .ev2-abs, .ev3-abs {
+    top: -3pc;
+    }
+    
+    .up-ev-mains {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    text-align: center;
+    }
+    
+    .upevmaintitle {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    text-align: center;
+    }
+    
+    .evmaint {
+    font-size: 1.3rem;
+    font-weight: bold;
+    }
+    
+    .evmaintimes {
+    font-weight: bold;
+    }
+    
+    .evmaintext {
+    text-align: center;
+    }
+    
+    .upevbtn {
+    background-color: #d4ab17;
+    color: white;
+    font-weight: bold;
+    }
+    
+    .upevbtn:hover {
+    background-color: #eea60a;
+
+    }
+    
+    /*toogle style for events page */
+    .disEvents {
+        display: none;
+    }
+    
+    @media all and (min-width:996px) {
+        .up-evs{
+            display: flex;
+            flex-direction: unset;
+            justify-content: space-around;
+            gap: 2pc;
+            align-items: center;
+            padding: 2pc;
+            }
+            
+            .disEvents {
+                display: none;
+            }
+    }    
+
+    
+    /* End upcoming events */
+
+
+    /* events styles for all pages */
+.church-events {
+    background-color: #eee;
+    }
+    .ch-evs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2pc;
+    align-items: center;
+    padding: 1pc;
+    }
+
+    .cpslibrary {
+        height: auto;
+    }
+    
+    .ch-ev-1 {
+    border: .5pc solid #fff;
+    height: 10pc;
+    width: 15pc;
+    }
+
+   
+    
+    .ch-ev-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    }
+
+    .cpscdes{
+        height: 10pc !important;
+        width: 14.5pc !important;
+    }
+    
+    /* general style for all events label absolutes*/
+    
+    /* Position relative maybe better suited than position absolute - 
+    Because absolutely positioned elements differ in specified positions in different viewports*/
+    .ch-ev-abs {
+    position: relative;
+    width: fit-content;
+    left: -1pc;
+    background-color: skyblue;
+    color: white;
+    display: flex;
+    padding: .1pc .5pc .1pc 1pc;
+    gap: .5pc;
+    }
+
+
+    
+    .visitev-abs, .meetev-abs, .streamev-abs {
+    top: -3pc;
+    }
+
+
+    @media all and (min-width:996px) {
+        /* events styles */
+.church-events {
+    background-color: #eee;
+    }
+    .ch-evs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2pc;
+    align-content: center;
+    padding: 1pc;
+    height: fit-content;
+    }
+
+    
+    .ch-ev-1 {
+    border: .5pc solid #fff;
+    height: 15pc;
+    width: 20pc;
+    }
+    
+    .ch-ev-img {
+    height: 100%;
+    width: 100%;
+    }
+    
+    /* general style for all events label absolutes*/
+    
+    /* Position relative maybe better suited than position absolute - 
+    Because absolutely positioned elements differ in specified positions in different viewports*/
+    .ch-ev-abs {
+    position: relative;
+    width: fit-content;
+    left: -1pc;
+    background-color: skyblue;
+    color: white;
+    display: flex;
+    padding: .5pc .5pc .5pc 1pc;
+    gap: .5pc;
+    }
+    
+    .visitev-abs, .meetev-abs, .streamev-abs {
+    top: -4pc;
+    }
+    }
+
+    /* End events */
+
+
+    /* serve styles */
+.servemain {
+    background-color: rgb(7, 74, 100);
+    color: white;
+    padding: 1pc;
+}
+
+.serve-inner {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1pc;
+}
+
+
+.serveText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1pc;
+}
+
+.stitle {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+
+
+.serve-text {
+    font-size: .8rem;
+}
+
+.servebtn {
+    background-color: #111;
+    color: white;
+}
+
+.servebtn:hover {
+    background-color: #333;
+}
+
+.carouselmain {
+    position: relative;
+    max-width: 100pc;
+}
+
+.serveboxes {
+    border: .5pc solid white;
+}
+
+.simg {
+    width: 15pc;
+    height: 10pc;
+}
+
+
+.sboximg {
+    display: none;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -2.2pc;
+    border-radius: 100%;
+    background-color: white;
+    color: black;
+    font-size: 1.3rem;
+    padding: .5pc;
+    user-select: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .6s ease;
+}
+
+.la { 
+    left: -3pc;
+}
+
+.ra {
+    right: -3pc;
+}
+
+    @media all and (min-width:996px) {
+        .serve-inner {
+            margin: 0 auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-content: center;
+            gap: 1pc;
+        }
+        
+        .serve-text {
+            padding: 1pc;
+            font-size: 1.3rem;
+        }
+        
+        .serveCaro {
+            margin: 1pc;
+            padding: 1pc;
+        }
+        
+        .simg {
+            width: 100%;
+            height: 20pc;
+        }
+        
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -2.2pc;
+            border-radius: 100%;
+            background-color: white;
+            color: black;
+            font-size: 1.3rem;
+            padding: .5pc;
+            user-select: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .6s ease;
+        }
+        
+        .la { 
+            left: -2pc;
+        }
+        
+        .ra {
+            right: -2pc;
+        }
+    }
+
+    /*End server styles*/
+
+
+
+    /* start admissions */
+
+.adminmain {
+    margin: 2rem auto;
+    width: 70%;
+    padding: .5rem;
+    border: .1rem solid #eee;
+}
+
+/* Grid container */
+.adminInner {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+.adminInfo,.admininforinner, .appbox, .adfeebox , .adfeeinner, .adapprocess {
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+.admininforinner, .adappin {
+    padding-left: 1rem;
+}
+
+.onstep {
+    list-style-type: none;
+}
+
+
+/* admission officials - */
+
+.adminOfficials {
+    padding: .5rem;
+}
+
+.admoffinfo {
+    padding-left: 1rem;
+}
+
+.tm-bg {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1pc;
+    padding: 1pc;
+    border: .1pc solid #eee;
+}
+
+.tm-img {
+    width: 10pc;
+    height: 10pc;
+    border-radius: 100%;
+}
+
+.tm-bx-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    width: 70%;
+    text-align: center;
+}
+
+.tm-mb-name {
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.tm-small {
+    color: #777;
+}
+
+.tm-des {
+    width: 95%;
+    color: #555;
+    text-align: center;
+}
+
+.tm-snet {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.sn-inner > .tm-bg > .tm-snet {
+    font-size: .7rem;
+    display: flex;
+    gap: 1pc;
+}
+
+.sn-inner > .tm-bg > .tm-snet > .sm {
+    font-size: .7rem;
+    display: flex;
+    gap: 1pc;
+}
+
+
+@media only screen and (max-width: 996px) {
+    .adminmain {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .adminInner {
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+        
+    }
+}
+
+
+
+/* end admissions */
+
+/* cAREER STYLES */
+
+.career-wrap {
+    margin: 3pc auto;
+    width: 70%;
+    height: 10pc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ctitle {
+    font-size: 1.7rem;
+}
+
+.no-jobs {
+    padding: 1pc;
+}
+
+.back-ltr {
+    font-size: 1.3rem;
+}
+
+
+/* NEW FEATURE DIALOG MODAL 12NOV 2023 - STYLES */
+
+
+#openModal {
+    height: 2.5pc;
+    width: auto;
+    border: none;
+    font-size: 1.4rem;
+    color: red;
+    padding: .5pc;
+    background-color: rgb(7, 7, 82);
+    color: white;
+}
+
+#openModal:hover {
+    background-color: rgb(47, 47, 243);
+}
+
+
+.tempmodal {
+    position: absolute;
+    display: none;
+    width: 40%;
+
+    border-radius: 30px;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.temp_modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5pc 1pc;
+    color: rgb(3, 3, 26);
+}
+
+.closeModal {
+    border: none;
+    height: 2.5pc;
+    width: 2.5pc;
+    font-size: 1.9pc;
+}
+
+.closeModal:hover {
+    background-color: #fff;
+    color: #f00;
+}
+
+
+
+
+.modalMain {
+    padding: 1pc;
+
+}
+
+.tempModalfoo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5pc;
+}
+
+.tempmodalbtn {
+    height: 50px;
+    width: 200px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .tempmodaltext {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+  }
+  
+  .temptype1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #333;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+  }
+  
+  .tempmodalbtn:hover {
+    box-shadow: 1px 1px 100px #252525;
+    color: white;
+    border: none;
+  }
+  
+  .temptype1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+  }
+
+
+  @media only screen and (max-width:996px) {
+        * {
+            font-size: small;
+        }
+
+
+        .tempmodal {
+            width: 80%;
+        }
+  }
+
+
+
+
+
+/* --------------------------START IF-----------------------------------------------*/
+
+
+  /* INITIATE STYLES FOR SEARCH FUNCTIONAILITY */
+
+  #myInput {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px; 
+}
+
+#myUl {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    list-style-type: none;
+    padding: .5pc;
+    margin: 3pc auto;
+    z-index: 50;
+    background-color: #FFF;
+    box-shadow: 0 0 .666pc .666pc #eee;
+    overflow-y: scroll;
+}
+
+
+#myUl li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* prevent double borders*/
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+
+}
+
+#myUl li a:hover:not(.header) {
+    background-color: #eee; /* add a hover effect except for headers */
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    padding: .5pc;
+}
+.search_header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1pc;
+    padding: .5pc;
+}
+
+.body_result {
+    padding: .5pc;
+}
+
+ul.hidden {
+    display: none;
+}
+
+
+.imghead {
+    border-radius: 100%;
+}
+
+.searchcontent {
+    border: .1pc solid #eee;
+
+}

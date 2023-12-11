@@ -1,0 +1,78 @@
+* {
+    transition: .5s ease;
+}
+
+.bthemebtn {
+    margin: .8pc .8pc .8pc 3.2pc;
+}
+
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+width: 40%;
+margin: 5pc auto;
+color: var(--akaddianStrong);
+}
+
+.pg-title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.title404 {
+    font-weight: bold;
+
+}
+
+.title4044 {
+    color: #999;
+}
+
+.file-status {
+    margin-top: 2pc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pg-options {
+    margin-left: 2pc;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1pc;
+}
+.try-btn {
+    height: 2pc;
+    width: 7pc;
+    background-color: skyblue;
+    color: #000;
+    border: none;
+    border-radius: .2pc;
+}
+
+.lome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219, 242, 252);
+
+}
+
+/* for screen sizes less than 996px */
+
+@media only screen and (max-width: 996px) {
+    .page-not-found {
+        width: 70%;
+    }
+}
+
+/* for screen sizes less than 500px */
+
+@media only screen and (max-width: 500px) {
+    .page-not-found {
+        width: 80%;
+    }
+}

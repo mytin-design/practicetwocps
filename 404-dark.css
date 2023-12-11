@@ -1,0 +1,56 @@
+* {
+    transition: .5s ease;
+}
+
+.bthemebtn {
+    margin: .8pc .8pc .8pc 3.2pc;
+}
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+width: 40%;
+margin: 5pc auto;
+color: azure;
+}
+
+.pg-title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.file-status {
+    margin-top: 2pc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pg-options {
+    margin-left: 2pc;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    height: 2pc;
+    width: 7pc;
+}
+
+/* for screen sizes less than 996px */
+
+@media only screen and (max-width: 996px) {
+    
+    .page-not-found {
+        width: 70%;
+    }
+}
+
+/* for screen sizes less than 500px */
+
+@media only screen and (max-width: 500px) {
+    .page-not-found {
+        width: 80%;
+    }
+}

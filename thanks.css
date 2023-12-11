@@ -1,0 +1,15 @@
+.thank-page {
+    height: 40vh;
+    margin: 2pc auto;
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2pc;
+    justify-content: center;
+}
+
+
+.thank-title {
+    font-size: 3rem;
+}

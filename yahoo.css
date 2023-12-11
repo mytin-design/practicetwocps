@@ -1,0 +1,368 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cps-main: rgba(39, 184, 241, 0.938);
+    --cps-sec: skyblue;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 100px 5px 100px;
+    height: 10vh;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 8pc !important;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.yahooText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cps-main);
+}
+
+.cpslogwrapper {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    background: rgba(190, 219, 233, 0.205);
+}
+
+.videoWrapper {
+
+    height: 70%;
+    width: 40%;
+    background: #fff;
+}
+
+#cpslogvideo {
+    border: 1px solid;
+    width: 100%;
+    background: #000;
+    border-radius: 8px;
+
+}
+
+
+/* Tabs section */
+.tab_buttons {
+    border: .1pc solid #eee;
+    padding: 1pc;
+}
+
+.regtabcontent, .logtabcontent {
+    display: none;
+}
+
+.btn-reg {
+    height: 35px;
+    width: 40%;
+    border-radius: 8pc !important;
+    border: 1px solid;
+    margin-top: 10px;
+    background-color: transparent;
+    margin: 10px;
+
+}
+
+
+.videoText {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+
+/* styles for loginWrapper */
+
+.loginWrapper {
+    margin: 1pc;
+    padding: 10px;
+    text-align: center;
+    height: fit-content;
+    width: 30%;
+    background-color: #fff;
+    filter: drop-shadow(0px 0px 5px #ddd);
+    font-size: 1.3em;
+    border-radius: 8px;
+}
+
+.yahooLogo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+.signInText {
+    font-size: larger;
+    font-weight: bold;
+}
+.elaborateText {
+    margin-bottom: 50px;
+    font-size: .9em;
+}
+
+.username {
+    width: 90%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    padding: 3px;
+    font-size: .8em;
+}
+
+.nextBtn {
+    height: 45px;
+    width: 90%;
+    margin-top: 20px;
+    background-color: rgb(55, 153, 245);
+    color: #fff;
+    font-weight: bold;
+    font-size: inherit;
+    border-radius: 20px;
+    border: none;
+
+}
+
+.forgot_username {
+    color: rgb(55, 153, 245);
+}
+
+.forgot_username:hover {
+    color: #00f;
+}
+.nextBtn:hover {
+    background-color: rgb(22, 110, 243);
+}
+.logOptions {
+    display: flex;
+    font-size: .8em;
+    width: 100%;
+    color: rgb(55, 153, 245);
+    justify-content: space-between;
+    padding: 10px 30px 10px 30px;
+    margin-top: 10px;
+
+}
+
+.createbtn_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createBtn {
+    
+    text-align: center;
+    height: 45px;
+    width: 90%;
+    background-color: transparent;
+    color: rgb(55, 153, 245);
+    font-size: inherit;
+    font-weight: bold;
+    border-radius: 22px;
+    text-decoration: none;
+}
+
+
+
+.createBtn:hover {
+    color: rgba(67, 106, 235, 0.884);
+    border: 1px solid rgba(30, 69, 243, 0.87);
+} 
+
+
+.orLoginWith {
+    margin-top: 20px;
+    font-size: .9em;
+}
+
+.googleLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 90%;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    font-size: inherit !important;
+    border-radius: 22px;
+    border: 1px solid #777;
+}
+
+.googleLogin:hover {
+    border: 1px solid #00f;
+}
+
+.googleName {
+    padding-left: 5px;
+}
+.cpscopyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1pc;
+}
+
+
+
+/* Styles for password wrapper */
+
+.yahoo_margin {
+    margin-bottom: 10px;
+}
+
+#user-email {
+    font-size: .9em;
+    margin-bottom: 20px;
+}
+
+.passwordTitle {
+    font-size: 1.2em;
+}
+
+.pass_text {
+    font-size: .8em;
+}
+
+#cpspasscode {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    width: 90%;
+    font-size: .8em;
+    padding: 10px;
+}
+
+.usermobile:focus::placeholder {
+    color: transparent;
+}
+
+#cpspasscode:focus::placeholder {
+    color: transparent;
+}
+
+.forgot_password {
+    font-size: .8em;
+}
+
+
+
+@media only screen and (max-width: 996px) {
+
+    .cpslogwrapper {
+        overflow-y: scroll;
+    }
+    
+    .loginWrapper {
+    width: 35%;
+    height: fit-content;
+    }
+    .yahooText {
+        font-size: 1.2rem;
+
+    }
+
+    .cpscopyright {
+        width: 50%;
+     
+    }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+    .cpslogwrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    height: fit-content;
+    overflow-y: scroll;
+
+}
+.loginWrapper {
+    width: 70%;
+    height: fit-content;
+}
+
+.videoWrapper {
+
+    height: 70%;
+    width: 90%;
+}
+
+.nav {
+ 
+    padding: 5px 10px 5px 10px;
+ 
+}
+
+.yahooText {
+    font-size: 1.2rem;
+
+}
+
+.cpscopyright {
+    width: 50%;
+ 
+}
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    .cpslogwrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    overflow-y: scroll;
+
+}
+.loginWrapper {
+    width: 100%;
+    height: fit-content;
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    height: 10vh;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.yahooText {
+    font-size: 1rem;
+
+}
+
+.cpscopyright {
+    width: 50%;
+ 
+}
+
+}
